@@ -1,0 +1,29 @@
+Ntq\Tickit\Entity\UserStory:
+  type: entity
+  table: tickit_user_stories
+  indexes:
+    name_index:
+      columns: [ name ]
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    name:
+      type: string
+      length: 100
+      nullable: false
+    description:
+      type: text
+    priority:
+      type: integer
+      nullable: false
+      options:
+        default: 0
+  manyToOne:
+    assignee:
+      targetEntity: Member
+      joinColumn:
+        name: assignee_id
+        nullable: false

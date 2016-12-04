@@ -1,0 +1,30 @@
+Ntq\Tickit\Entity\Member:
+  type: entity
+  table: tickit_members
+  indexes:
+    name_index:
+      columns: [ email ]
+  id:
+    id:
+      type: integer
+      generator:
+        strategy: AUTO
+  fields:
+    firstName:
+      type: string
+      length: 50
+      nullable: false
+    lastName:
+      type: string
+      length: 50
+      nullable: false
+    email:
+      type: string
+      length: 255
+      unique: true
+      nullable: false
+  oneToMany:
+    userStories:
+      targetEntity: UserStory
+      mappedBy: assignee
+      cascade: ["persist", "merge"]

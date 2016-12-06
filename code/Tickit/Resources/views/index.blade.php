@@ -25,6 +25,13 @@
                 </td>
             </tr>
         @endforeach
+        @unless($userStories->count())
+            <tr>
+                <td colspan="4">
+                    There are no available user stories.
+                </td>
+            </tr>
+        @endunless
         </tbody>
     </table>
 

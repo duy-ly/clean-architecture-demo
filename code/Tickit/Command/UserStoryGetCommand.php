@@ -29,6 +29,9 @@ class UserStoryGetCommand extends Command
      */
     protected $getUserStories;
 
+    /**
+     * @param GetUserStories $getUserStories
+     */
     public function __construct(GetUserStories $getUserStories)
     {
         $this->getUserStories = $getUserStories;

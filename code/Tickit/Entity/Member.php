@@ -2,9 +2,6 @@
 
 namespace Ntq\Tickit\Entity;
 
-
-use Doctrine\Common\Collections\ArrayCollection;
-
 class Member
 {
     /**
@@ -28,14 +25,9 @@ class Member
     private $email;
 
     /**
-     * @var ArrayCollection
+     * @var UserStory[]
      */
-    private $userStories;
-
-    public function __construct()
-    {
-        $this->userStories = new ArrayCollection();
-    }
+    private $userStories = array();
 
     /**
      * @return int
@@ -118,7 +110,7 @@ class Member
     }
 
     /**
-     * @return ArrayCollection
+     * @return UserStory[]
      */
     public function getUserStories()
     {

@@ -15,8 +15,6 @@
                         {{ $member->getFullName() }}
                     </option>
                 @endforeach
-
-                <option>With options</option>
             </select>
         </span>
         </p>
